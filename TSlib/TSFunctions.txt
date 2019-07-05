@@ -1,0 +1,100 @@
+
+  Version 2.1                 24-July-2018
+ 
+  Library of TS Routines
+ 
+   Creating, Loading and Saving Experiment Structures
+    TSinitexperiment            - Creates a new Experiment Structure
+    TSloadexperiment            - Loads an Experiment Structure mat-file
+    TSsaveexperiment            - Saves an Experiment Structure to mat-file
+    TSbegin                     - Leads the user through the process of
+                                    creating an experimental structure by
+                                    reading Excel spreadsheet
+    TSstartsession              - Leads user through process of starting a
+                                    session by reading Excel spreadsheet
+    TSaddsubjects               - Allows the user to add subjects to the
+                                  structure by answering the prompts                            
+ 
+   Loading Data & Code Programs
+    TSloadsessions              - Loads in MED-PC data files
+    TSsetloadparameters         - Sets several loading parameters
+    TSsetoverwritemode          - Sets the overwritemode value
+    TSloadMEDPC                 - Loads Gallistelab formatted raw data files
+    TSloadstdtab                - Loads tab delimited 2-col data file
+    TSloadsstdxls               - Loads data from Excel file, assuming they
+                                    are in 1st 2 cols
+    TSloadcsv                   - Loads data from csv file, assuming they
+                                     are in 1st 2 cols
+    TSaddPrograms		- Loads experiment-control (e.g., MedPC) code
+				     files into the Experiment.Programs structure
+    TSloadscript                 - Loads the script into Experiment.Script
+    TSexportscript               - Creates <SCRIPT>.m from Experiment.Script field 
+ 
+   Creating trials
+    TSdefinetrialtype           - Creates a trial definition
+
+ 
+  Editing Data
+    TSedit                      - Modifies or inserts TSdata codes found by TSmatch
+
+  Finding Event Sequences
+    TSmatch                     - Searches TSdata for matches to user-specified
+                                    event sequences; called by TSparse
+ 	
+  Creating statistics
+    TSparse                     - Computes user-specified statistics from
+                                    event sequences found by TSmatch; ; often 
+                                    called from TStrialstat & TSsessionstat
+    TSsessionstat               - Computes user-specified statistics taking   
+                                    TSData as input and putting results into
+                                    user-specified field
+    TStrialstat                 - Creates trial statistics by finding user-
+                                    specified sequences within trials and
+                                    computing stats from those sequences
+                                    using user-specified function; puts results
+                                    in user-specified field
+    TSapplystat                 - Computes user-specified statistics from
+                                    data or statistics in one or more fields
+                                    in the structure and puts results
+                                    into one or more new fields
+    TScombineover               - Creates fields at a higher level by
+                                    combining statistics from lower-level fields
+
+Controlling data operated on
+    TSlimit                     - Limits what subjects, sessions, phases,
+                                    trial numbers are active (to-be-operated-on)
+    TSsettrial                  - Makes a specified trial type the active trial type
+    TSsetdata                   - Sets the active data field
+
+ 
+   Handling Event Codes
+    TSdeclareeventcodes         - Call this to declare the event codes as global and use them
+    TSimporteventcodes          - Imports a text readable list of codenames and values
+    TSexporteventcodes          - Exports event codes from the Experiment to a text file
+    TSsetdefaulteventcodes      - Sets the TSlib default event codes when no Experiment is loaded
+    TSaddeventcodes             - Adds one or more event codes to the current Experiment
+    TSrmeventcodes              - Removes one or more event codes from the current Experiment
+ 
+   Plotting Functions
+    TSraster                    - Creates a raster plot of Time Stamped Data.
+    TSplot			- Creates labeled x-y line and scatter plots, with multiple panels
+    TSplotcdfs			- Creates labeled plots of cumulative distributions, with multiple panels
+    TSplotcumrecs		- Creates labeled plots of cumulative records, with multiple panels
+ 
+   Gui Tools
+    TSexperimentbrowser         - General browsing tool for the Experiment
+    TSrastergui                 - GUI interface to TSraster, makes raster plots
+
+ 
+   Miscellaneous
+    TSorderfields               - Changes the order of the fields at a given level
+    TSrenamefields              - Renames fields
+    TSrmfield                   - Recursively removes fields from the structure
+    TScheckconsistency          - Checks the consistency of the structure.
+    TSremovesession            - Removes a session given Subject ID# & session #
+    
+  Installer/Updater
+    DownloadTSlib               - Download a copy of TSlib
+    UpdateTSlib                 - Updates installed TSlib to the most curren version
+
+ 
